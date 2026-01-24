@@ -5,8 +5,8 @@
  * Copyright 2025, Amlal El Mahrouss, licensed under the Boost Software License.
  */
 
-#ifndef __OCL_FIX_CHECKSUM
-#define __OCL_FIX_CHECKSUM
+#ifndef OCL_FIX_CHECKSUM
+#define OCL_FIX_CHECKSUM
 
 #include <ocl/fix/detail/config.hpp>
 #include <ocl/fix/parser.hpp>

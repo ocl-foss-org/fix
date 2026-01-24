@@ -10,8 +10,8 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 // Official repository: https://github.com/ocl-org/fix
 
-#ifndef __OCL_FIX_PARSER
-#define __OCL_FIX_PARSER
+#ifndef OCL_FIX_PARSER
+#define OCL_FIX_PARSER
 
 #include <ocl/fix/detail/config.hpp>
 #include <fstream>
@@ -146,4 +146,4 @@ inline std::ostream& operator<<(std::ostream& os, const ocl::fix::range& r)
 	return os;
 }
 
-#endif // ifndef __OCL_FIX_PARSER
+#endif // ifndef OCL_FIX_PARSER
