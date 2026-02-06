@@ -13,4 +13,4 @@ target_include_directories(FixExample PUBLIC ${BOOST_INCLUDE_DIRS})
 
 set_property(TARGET FixExample PROPERTY CXX_STANDARD 20)
 target_include_directories(FixExample PUBLIC ../../include/ocl)
-target_link_libraries(FixExample PRIVATE ocl_fix)
+target_link_libraries(FixExample PRIVATE ocl_fix.a)

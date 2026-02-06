@@ -22,6 +22,8 @@ namespace ocl::fix
 
 	} // namespace detail
 
+         boost::string_view& range_buffer::begin = detail::begin_fix();
+  
 	struct visitor::impl final
 	{
 	public:
@@ -40,31 +42,28 @@ namespace ocl::fix
 		/// @warning This function may throw exceptions.
 		range_buffer visit(const boost::string_view& in)
 		{
-			if (auto begin = detail::begin_fix(); begin != range_buffer::begin)
-				range_buffer::begin = begin;
-
 			range_buffer ret{};
 
 			if (in.empty())
 				return ret;
 
-			std::string key;
-
+			std::string key, tag, value;
 			std::size_t off = 0UL;
-
+			std::size_t soh_pos = 0UL;
+			
 			while (off < in.size())
 			{
 				std::size_t eq_pos = in.find(eq, off);
 				if (eq_pos == std::string::npos)
 					break;
 
-				std::string tag = in.substr(off, eq_pos - off).to_string();
+				tag = in.substr(off, eq_pos - off).to_string();
 
-				std::size_t soh_pos = in.find(soh, eq_pos + 1);
+				soh_pos = in.find(soh, eq_pos + 1);
 				if (soh_pos == std::string::npos)
 					soh_pos = in.size();
 
-				std::string value = in.substr(eq_pos + 1, soh_pos - eq_pos - 1).to_string();
+			        value = in.substr(eq_pos + 1, soh_pos - eq_pos - 1).to_string();
 
 				if (ret.magic_.empty())
 				{

@@ -3,10 +3,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(ocl_fix)
 
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED core)
 
 add_library(ocl_fix src/fix/parser_impl.cpp)
-target_link_libraries(ocl_fix boost_core)
+target_link_libraries(ocl_fix Boost::core)
 target_include_directories(ocl_fix PUBLIC ${BOOST_INCLUDE_DIRS})
 
 install(DIRECTORY include/ DESTINATION include)
