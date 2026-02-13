@@ -2,7 +2,7 @@
 
 [![License: BSL](https://img.shields.io/badge/license-BSL-blue.svg)](LICENSE)
 
-FIX module from the OCL.
+The FIX module from the OCL.
 
 ## Requirements:
 
@@ -12,7 +12,7 @@ The OCL requires the following:
 - [Clang](https://clang.llvm.org/)
 - [CMake](https://cmake.org/)
 - [Git](https://git-scm.com/)
-- OCL.Core
+- [OCL.Core](https://github.com/ocl-org/core)
 
 ## Freestanding Status
 
