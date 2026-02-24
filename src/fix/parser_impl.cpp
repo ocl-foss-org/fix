@@ -22,8 +22,8 @@ namespace ocl::fix
 
 	} // namespace detail
 
-         boost::string_view& range_buffer::begin = detail::begin_fix();
-  
+	boost::string_view& range_buffer::begin = detail::begin_fix();
+
 	struct visitor::impl final
 	{
 	public:
@@ -48,9 +48,9 @@ namespace ocl::fix
 				return ret;
 
 			std::string key, tag, value;
-			std::size_t off = 0UL;
+			std::size_t off		= 0UL;
 			std::size_t soh_pos = 0UL;
-			
+
 			while (off < in.size())
 			{
 				std::size_t eq_pos = in.find(eq, off);
@@ -63,7 +63,7 @@ namespace ocl::fix
 				if (soh_pos == std::string::npos)
 					soh_pos = in.size();
 
-			        value = in.substr(eq_pos + 1, soh_pos - eq_pos - 1).to_string();
+				value = in.substr(eq_pos + 1, soh_pos - eq_pos - 1).to_string();
 
 				if (ret.magic_.empty())
 				{
