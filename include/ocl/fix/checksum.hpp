@@ -2,7 +2,7 @@
  * File: fix/checksum.hpp
  * Purpose: Financial Information Exchange checksum in C++
  * Author: Amlal El Mahrouss (amlal@nekernel.org)
- * Copyright 2025, Amlal El Mahrouss, licensed under the Boost Software License.
+ * Copyright 2025-2026, Amlal El Mahrouss, licensed under the Boost Software License.
  */
 
 #ifndef OCL_FIX_CHECKSUM
@@ -34,6 +34,7 @@ namespace ocl::fix
 	/// \brief FIX message operators namespace.
 	namespace operators
 	{
+        
 		using checksum_type = long long;
 
 		/// \brief Calculates the FIX protocol checksum for a message.
@@ -53,6 +54,7 @@ namespace ocl::fix
 			cks += 1;
 			return cks % 256;
 		}
+
 	} // namespace operators
 
 } // namespace ocl::fix

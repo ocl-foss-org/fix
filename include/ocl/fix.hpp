@@ -2,7 +2,7 @@
  * File: fix.hpp
  * Purpose: Financial Information Exchange function and headers in C++
  * Author: Amlal El Mahrouss (amlal@nekernel.org)
- * Copyright 2025, Amlal El Mahrouss, licensed under the Boost Software License.
+ * Copyright 2025-2026, Amlal El Mahrouss, licensed under the Boost Software License.
  */
 
 #ifndef OCL_FIX_HPP
@@ -28,5 +28,7 @@ namespace ocl::fix
 	typename Pred::size_type erase_if(It begin, It end, Pred callable);
 
 } // namespace ocl::fix
+
+#include <ocl/fix/fix.inl>
 
 #endif

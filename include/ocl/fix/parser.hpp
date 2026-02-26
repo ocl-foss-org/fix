@@ -2,7 +2,7 @@
  * File: fix/parser.hpp
  * Purpose: Financial Information Exchange parser in C++
  * Author: Amlal El Mahrouss (amlal@nekernel.org)
- * Copyright 2025, Amlal El Mahrouss, licensed under the Boost Software License.
+ * Copyright 2025-2026, Amlal El Mahrouss, licensed under the Boost Software License.
  */
 
 // Copyright 2025-2026, Amlal El Mahrouss (amlal@nekernel.org)
@@ -123,7 +123,7 @@ namespace ocl::fix
 		visitor();
 		~visitor();
 
-		/// \brief Alias of visit.
+		/// @brief Alias of visit.
 		range_buffer operator()(const std::string& in);
 
 		/// @brief Visits a FIX message and parse it into a range_buffer object.

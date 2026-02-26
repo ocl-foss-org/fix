@@ -2,11 +2,12 @@
  * File: fix/parser_impl.cpp
  * Purpose: Financial Information Exchange parser in C++
  * Author: Amlal El Mahrouss (amlal@nekernel.org)
- * Copyright 2025, Amlal El Mahrouss, licensed under the Boost Software License.
+ * Copyright 2025-2026, Amlal El Mahrouss, licensed under the Boost Software License.
  */
 
 #define OCL_FIX_HAS_IMPL
 #include <ocl/fix/parser.hpp>
+#include <boost/algorithm/cxx11/is_sorted.hpp>
 
 namespace ocl::fix
 {
