@@ -18,42 +18,20 @@ namespace ocl::fix
 	/// \brief Returns the checksum index of a FIX message.
 	/// \param range the range_buffer containing the message.
 	/// \throws runtime_error if the FIX message is invalid (missing tag "8").
-
-	inline std::string try_index_checksum(range_buffer& fix)
-	{
-		if (fix.is_valid())
-			return fix["10"];
-		else
-			::ocl::fix::detail::throw_runtime_error();
-
-		::ocl::fix::detail::unreachable();
-
-		return {};
-	}
+	std::string try_index_checksum(range_buffer& fix);
 
 	/// \brief FIX message operators namespace.
 	namespace operators
 	{
-        
+
 		using checksum_type = long long;
 
 		/// \brief Calculates the FIX protocol checksum for a message.
 		/// \param in_ Pointer to the message buffer.
 		/// \param len Length of the message in bytes.
 		/// \return The checksum value (sum of all bytes modulo 256).
-		constexpr inline checksum_type
-		checksum(const std::string_view& in_) noexcept
-		{
-			checksum_type cks{};
-
-			for (std::size_t idx{};
-				 idx < in_.size(); ++idx)
-				cks += static_cast<uint8_t>(in_[idx]);
-
-			// add \0
-			cks += 1;
-			return cks % 256;
-		}
+		checksum_type
+		checksum(const boost::string_view& in_) noexcept;
 
 	} // namespace operators
 

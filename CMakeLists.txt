@@ -5,11 +5,11 @@ project(ocl_fix)
 
 find_package(Boost REQUIRED core)
 
-add_library(ocl_fix src/fix/parser_impl.cpp)
+add_library(ocl_fix src/fix/parser.cpp src/fix/checksum.cpp)
 target_link_libraries(ocl_fix Boost::core)
 target_include_directories(ocl_fix PUBLIC ${BOOST_INCLUDE_DIRS})
 
-install(DIRECTORY include/ DESTINATION include)
+install(DIRECTORY include DESTINATION include)
 install(TARGETS ocl_fix DESTINATION lib)
 
 set_property(TARGET ocl_fix PROPERTY CXX_STANDARD 20)

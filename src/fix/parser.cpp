@@ -1,5 +1,5 @@
 /*
- * File: fix/parser_impl.cpp
+ * File: fix/parser.cpp
  * Purpose: Financial Information Exchange parser in C++
  * Author: Amlal El Mahrouss (amlal@nekernel.org)
  * Copyright 2025-2026, Amlal El Mahrouss, licensed under the Boost Software License.
@@ -84,7 +84,7 @@ namespace ocl::fix
 	visitor::visitor()	= default;
 	visitor::~visitor() = default;
 
-	/// \brief Alias of visit.
+	/// @brief Alias of visit.
 	range_buffer visitor::operator()(const std::string& in)
 	{
 		return impl_->visit(in.data());

@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 	ocl::io::print(":value=", fix["49"], "\n");
 
 	ocl::io::print(":checksum=", ocl::fix::try_index_checksum(fix), "\n");
-	ocl::io::print(":checksum=", ocl::fix::operators::checksum(default_fix_unchecked), "\n");
+	//ocl::io::print(":checksum=", ocl::fix::operators::checksum(default_fix_unchecked), "\n");
 
 	return 0;
 }
