@@ -12,7 +12,7 @@ The OCL requires the following:
 - [Clang](https://clang.llvm.org/)
 - [CMake](https://cmake.org/)
 - [Git](https://git-scm.com/)
-- [OCL.Core](https://github.com/ocl-org/core)
+- [OCL.Core](https://github.com/ocl-foss-org/core)
 
 ## Freestanding Status
 
