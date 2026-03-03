@@ -2,7 +2,7 @@
 
 [![License: BSL](https://img.shields.io/badge/license-BSL-blue.svg)](LICENSE)
 
-The FIX module from the OCL.
+The FIX module from the OCL. Parse FIX messages using modern C++. Easily.
 
 ## Requirements:
 
