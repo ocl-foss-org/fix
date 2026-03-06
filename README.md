@@ -1,6 +1,7 @@
 # OCL.FIX
 
 [![License: BSL](https://img.shields.io/badge/license-BSL-blue.svg)](LICENSE)
+![GitHub Repo stars](https://img.shields.io/github/stars/ocl-foss-org/fix)
 
 The FIX module from the OCL. Parse FIX messages using modern C++. Easily.
 
