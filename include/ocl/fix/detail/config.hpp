@@ -1,9 +1,8 @@
-/*
- * File: detail/config.hpp
- * Purpose: Config file of the OCL.FIX library.
- * Author: Amlal El Mahrouss (amlal@nekernel.org)
- * Copyright 2025-2026, Amlal El Mahrouss, licensed under the Boost Software License.
- */
+// SPDX-License-Identifier: BSL-1.0
+// Copyright 2025-2026, Amlal El Mahrouss (amlal@nekernel.org)
+// Distributed under the Boost Software License, Version 1.0. (See accompanying
+// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+// Official repository: https://github.com/ocl-foss-org/fix
 
 #ifndef OCL_FIX_CONFIG
 #define OCL_FIX_CONFIG
