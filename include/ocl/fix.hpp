@@ -28,6 +28,6 @@ namespace ocl::fix
 
 } // namespace ocl::fix
 
-#include <ocl/fix/fix.inl>
+#include "fix.inl"
 
 #endif
