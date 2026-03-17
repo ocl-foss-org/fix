@@ -16,7 +16,7 @@ namespace ocl::fix
 		else
 			detail::throw_runtime_error();
 
-    detail::unreachable();
+		detail::unreachable();
 
 		return {};
 	}

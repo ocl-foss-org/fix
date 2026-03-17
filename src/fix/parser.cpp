@@ -4,7 +4,6 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 // Official repository: https://github.com/ocl-foss-org/fix
 
-
 #define OCL_FIX_HAS_IMPL
 #include <ocl/fix/parser.hpp>
 #include <boost/algorithm/cxx11/is_sorted.hpp>
