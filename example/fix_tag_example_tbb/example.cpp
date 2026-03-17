@@ -60,7 +60,7 @@ int task_main()
 
 struct fix_task final
 {
-	fix_task(size_t n)
+	fix_task(const size_t& n)
 		: _n(n)
 	{
 	}
@@ -75,9 +75,9 @@ struct fix_task final
 };
 
 template <typename T>
-struct invoker
+struct fix_invoker final
 {
-	void operator()(T& it) const
+	void operator()(const T& it) const
 	{
 		it();
 	}
@@ -91,6 +91,6 @@ int main(int, char**)
 	for (int i = 0; i < 1000; ++i)
 		tasks.push_back(fix_task(i));
 
-	tbb::parallel_for_each(tasks.begin(), tasks.end(), invoker<fix_task>());
+	tbb::parallel_for_each(tasks.cbegin(), tasks.cend(), fix_invoker<fix_task>());
 	return 0;
 }

@@ -14,6 +14,7 @@ namespace ocl::fix
 	namespace detail
 	{
 
+		/// AMLALE: unique_lock on this function?
 		inline boost::string_view& begin_fix() noexcept
 		{
 			static boost::string_view begin_fix{"FIX.4.2"};
