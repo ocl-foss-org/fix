@@ -4,6 +4,7 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 // Official repository: https://github.com/ocl-foss-org/fix
 
+#include <boost/timer/timer.hpp>
 #include <ocl/fix/parser.hpp>
 #include <ocl/fix/checksum.hpp>
 #include <tbb/tbb.h>
@@ -77,7 +78,7 @@ struct fix_task final
 template <typename T>
 struct fix_invoker final
 {
-	void operator()(const T& it) const
+	void operator()(T& it) const
 	{
 		it();
 	}
@@ -85,12 +86,13 @@ struct fix_invoker final
 
 int main(int, char**)
 {
-	tbb::task_arena init; // automatic thread retrieval (like in Asio!)
+	boost::timer::auto_cpu_timer tim;
+	tbb::task_arena				 init; // automatic thread retrieval (like in Asio!)
 
 	std::vector<fix_task> tasks;
 	for (int i = 0; i < 1000; ++i)
 		tasks.push_back(fix_task(i));
 
-	tbb::parallel_for_each(tasks.cbegin(), tasks.cend(), fix_invoker<fix_task>());
+	tbb::parallel_for_each(tasks.begin(), tasks.end(), fix_invoker<fix_task>());
 	return 0;
 }
