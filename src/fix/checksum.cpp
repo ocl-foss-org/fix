@@ -35,7 +35,7 @@ namespace ocl::fix
 
 			// add \0
 			cks += 1;
-			return cks % 256;
+			return cks % 256; // why 256? one has to look at the FIX standard. (https://www.onixs.biz/fix-dictionary/4.2/app_b.html)
 		}
 
 	} // namespace operators
