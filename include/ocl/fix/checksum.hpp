@@ -30,7 +30,7 @@ namespace ocl::fix
 		/// \param len Length of the message in bytes.
 		/// \return The checksum value (sum of all bytes modulo 256).
 		checksum_type
-		checksum(const boost::string_view& in_) noexcept;
+		fix_checksum(const boost::string_view& in_) noexcept;
 
 	} // namespace operators
 

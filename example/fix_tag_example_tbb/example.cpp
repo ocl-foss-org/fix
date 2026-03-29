@@ -54,7 +54,7 @@ int task_main()
 	ocl::io::print(":value=", fix["49"], "\n");
 
 	ocl::io::print(":checksum=", ocl::fix::try_index_checksum(fix), "\n");
-	// ocl::io::print(":checksum=", ocl::fix::operators::checksum(default_fix_unchecked), "\n");
+	// ocl::io::print(":checksum=", ocl::fix::operators::fix_checksum(default_fix_unchecked), "\n");
 
 	return 0;
 }

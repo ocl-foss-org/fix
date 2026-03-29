@@ -25,7 +25,7 @@ namespace ocl::fix
 	{
 
 		checksum_type
-		checksum(const boost::string_view& in_) noexcept
+		fix_checksum(const boost::string_view& in_) noexcept
 		{
 			checksum_type cks{};
 
