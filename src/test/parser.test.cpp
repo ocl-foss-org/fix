@@ -4,8 +4,13 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 // Official repository: https://github.com/ocl-foss-org/fix
 
+#define OCL_FIX_HAS_IMPL
+
 #include <ocl/fix/parser.hpp>
-#include <ocl/fix/checksum.hpp>
+
+#define BOOST_TEST_MODULE parser_test
+#include <boost/test/included/unit_test.hpp>
+
 
 constexpr char const default_fix[] = {
 	'8', '=', 'F', 'I', 'X', '.', '4', '.', '2', 0x01,
@@ -20,20 +25,14 @@ constexpr char const default_fix[] = {
 	'1', '0', '=', '6', '0', 0x01, 0x00 // CheckSum = 143
 };
 
-int main(int argc, char** argv)
+BOOST_AUTO_TEST_CASE(test_lookup_not_empty)
 {
+
 	ocl::fix::visitor	   basic_visitor;
 	ocl::fix::range_buffer fix = basic_visitor.visit(default_fix);
-
-	ocl::io::enable_stdio_sync(false);
-
-	ocl::io::print(":key=35\n");
+    
+    ocl::io::print(":key=35\n");
 	ocl::io::print(":value=", fix["35"], "\n");
 
-	ocl::io::print(":key=49\n");
-	ocl::io::print(":value=", fix["49"], "\n");
-
-	ocl::io::print(":checksum=", ocl::fix::try_index_checksum(fix), "\n");
-
-	return 0;
+    BOOST_TEST(fix["35"].empty() == false);
 }

@@ -14,3 +14,11 @@ install(TARGETS ocl_fix DESTINATION lib)
 
 set_property(TARGET ocl_fix PROPERTY CXX_STANDARD 20)
 
+project(ocl_test_parser)
+
+add_executable(ocl_test_parser src/test/parser.test.cpp)
+
+set_property(TARGET ocl_test_parser PROPERTY CXX_STANDARD 20)
+
+target_link_libraries(ocl_test_parser ocl_fix Boost::core)
+target_include_directories(ocl_test_parser PUBLIC ${BOOST_INCLUDE_DIRS})

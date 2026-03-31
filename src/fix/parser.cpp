@@ -5,6 +5,7 @@
 // Official repository: https://github.com/ocl-foss-org/fix
 
 #define OCL_FIX_HAS_IMPL
+
 #include <ocl/fix/parser.hpp>
 #include <boost/algorithm/cxx11/is_sorted.hpp>
 
