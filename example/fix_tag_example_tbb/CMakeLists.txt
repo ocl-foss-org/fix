@@ -9,7 +9,7 @@ project(
 find_package(Boost REQUIRED timer)
 find_package(TBB REQUIRED)
 
-add_executable(FixTBBExample example.cpp)
+add_executable(FixTBBExample example.ex.cpp)
 
 target_include_directories(FixTBBExample PUBLIC ${BOOST_INCLUDE_DIRS})
 
