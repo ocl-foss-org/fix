@@ -29,9 +29,8 @@ namespace ocl::fix
 	struct visitor::impl final
 	{
 	public:
-		static constexpr int	  soh  = '\x01';
-		static constexpr char	  eq   = '=';
-		static constexpr unsigned base = 10U;
+		static constexpr int  soh = '\x01';
+		static constexpr char eq  = '=';
 
 		explicit impl() = default;
 		~impl()			= default;
@@ -49,17 +48,18 @@ namespace ocl::fix
 			if (in.empty())
 				return ret;
 
-			std::string key, tag, value;
-			std::size_t off		= 0UL;
-			std::size_t soh_pos = 0UL;
+			std::size_t off = 0UL;
 
 			while (off < in.size())
 			{
+				std::string value{};
 				std::size_t eq_pos = in.find(eq, off);
+				
 				if (eq_pos == std::string::npos)
 					break;
 
-				tag = in.substr(off, eq_pos - off).to_string();
+				std::string tag = in.substr(off, eq_pos - off).to_string();
+				std::size_t soh_pos = 0UL;
 
 				soh_pos = in.find(soh, eq_pos + 1);
 				if (soh_pos == std::string::npos)

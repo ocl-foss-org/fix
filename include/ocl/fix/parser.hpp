@@ -8,7 +8,6 @@
 #define OCL_FIX_PARSER
 
 #include <ocl/fix/detail/config.hpp>
-#include <fstream>
 #include <string>
 #include <memory>
 
