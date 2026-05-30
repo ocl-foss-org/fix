@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.10)
 project(ocl_fix)
 
 find_package(Boost REQUIRED core)
+find_package(GSL OPTIONAL core)
+find_package(TBB OPTIONAL core)
 
 add_library(ocl_fix src/fix/parser.cpp src/fix/checksum.cpp)
 target_link_libraries(ocl_fix Boost::core)
