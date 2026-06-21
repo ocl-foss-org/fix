@@ -88,7 +88,10 @@ namespace ocl::fix
 	/// @brief Alias of visit.
 	range_buffer visitor::operator()(const std::string& in)
 	{
-		return impl_->visit(in.data());
+		if (impl_)
+			return impl_->visit(in.data());
+
+		return {};
 	}
 
 	/// @brief Visits a FIX message and parse it into a range_buffer object.
@@ -96,7 +99,7 @@ namespace ocl::fix
 	/// @warning This function may throw exceptions.
 	range_buffer visitor::visit(const std::string& in)
 	{
-		return impl_->visit(in.data());
+		return this->operator()(in);
 	}
 
 } // namespace ocl::fix
