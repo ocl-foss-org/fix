@@ -9,6 +9,7 @@
 namespace ocl::fix
 {
 
+	/// AMLALE: Add alias for std::string?
 	std::string try_index_checksum(range_buffer& fix)
 	{
 		if (fix.is_valid())
