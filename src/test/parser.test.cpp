@@ -11,7 +11,7 @@
 #define BOOST_TEST_MODULE parser_test
 #include <boost/test/included/unit_test.hpp>
 
-
+/// @brief default fix packet
 constexpr char const default_fix[] = {
 	'8', '=', 'F', 'I', 'X', '.', '4', '.', '2', 0x01,
 	'9', '=', '8', '7', 0x01, // BodyLength = 87
